@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/java/source/banquanao/src/java/context/DBContext.java</file>
+            <file>file:/D:/java/source/banquanao/src/java/control/CategoryControl.java</file>
+            <file>file:/D:/java/source/banquanao/web/js/main.js</file>
+            <file>file:/D:/java/source/banquanao/src/java/dao/DaoSanPham.java</file>
+            <file>file:/D:/java/source/banquanao/web/css/util.css</file>
+            <file>file:/D:/java/source/banquanao/web/Login_Register.jsp</file>
+            <file>file:/D:/java/source/banquanao/web/Home.jsp</file>
+            <file>file:/D:/java/source/banquanao/src/java/entity/DanhMucSanPham.java</file>
+            <file>file:/D:/java/source/banquanao/src/java/entity/SanPham.java</file>
+            <file>file:/D:/java/source/banquanao/web/ProductDetail.jsp</file>
+            <file>file:/D:/java/source/banquanao/src/java/control/HomeControl.java</file>
+            <file>file:/D:/java/source/banquanao/src/java/dao/DaoDanhMucSanPham.java</file>
+        </group>
+    </open-files>
+</project-private>
