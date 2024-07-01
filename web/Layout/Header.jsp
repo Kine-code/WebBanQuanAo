@@ -138,40 +138,13 @@
                             <div class="left-top-bar">
                                 Free shipping for standard order over $100
                             </div>
-                        </li>
-
-                        <li>
-                            <div class="right-top-bar flex-w h-full">
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    Help & FAQs
-                                </a>
-
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    My Account
-                                </a>
-
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    EN
-                                </a>
-
-                                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                                    USD
-                                </a>
-                            </div>
-                        </li>
+                        </li>  
                     </ul>
 
                     <ul class="main-menu-m">
                         <li>
-                            <a href="Home.jsp">Home</a>
-                            <ul class="sub-menu-m">
-                                <li><a href="index.html">Homepage 1</a></li>
-                                <li><a href="home-02.html">Homepage 2</a></li>
-                                <li><a href="home-03.html">Homepage 3</a></li>
-                            </ul>
-                            <span class="arrow-main-menu-m">
-                                <i class="fa fa-angle-right" aria-hidden="true"></i>
-                            </span>
+                            <a href="home">Home</a>
+                            
                         </li>
 
                         <li>
