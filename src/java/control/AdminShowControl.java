@@ -4,7 +4,11 @@
  */
 package control;
 
-import dao.DaoSanPham;
+import dao.DaoAccount;
+import dao.DaoDanhMucSanPham;
+import dao.*;
+import entity.*;
+import entity.DanhMucSanPham;
 import entity.SanPham;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,30 +26,59 @@ import java.util.List;
 @WebServlet(name = "AdminShowControl", urlPatterns = {"/ashowcontrol"})
 public class AdminShowControl extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+        //Sản Phẩm
         DaoSanPham daoSP = new DaoSanPham();
         List<SanPham> ListSP = daoSP.getAllSanPham();
         request.setAttribute("ListSP", ListSP);
         
         String name = request.getParameter("btnname");
-        String dmsp = request.getParameter("danhmucsanpham");
-        if(name != null)
-            request.setAttribute("btnname", name);
-        else if(dmsp != null){
-            request.setAttribute("btnname", dmsp);
+        
+        //Danh mục
+        DaoDanhMucSanPham daodm = new DaoDanhMucSanPham();
+        List<DanhMucSanPham> ListDM = daodm.getAllDanhMucSanPham();
+        request.setAttribute("ListDM", ListDM);
+        
+        //Account
+        dao.DaoAccount daoacc = new DaoAccount();
+        List<Account> ListACC = daoacc.getAllAccount();
+        request.setAttribute("ListACC", ListACC);
+        
+        //DonHang
+        DaoDonHang daodh = new DaoDonHang();
+        List<DonHang> ListDH = daodh.getAllDonHang();
+        request.setAttribute("ListDH", ListDH);
+        
+        //ChiTietDonHang
+        DaoChiTietDonHang daoct = new DaoChiTietDonHang();
+        List<ChiTietDonHang> ListCT = daoct.getAllChiTietDonHang();
+        request.setAttribute("ListCT", ListCT);
+        if(name != null){
+            switch (name) {
+                case "addsp":
+                    request.setAttribute("btnname", name);
+                    request.getRequestDispatcher("Add.jsp").forward(request, response);
+                    break;
+                case "dmsp":
+                    request.setAttribute("btnname", name);
+                    request.getRequestDispatcher("Add.jsp").forward(request, response);
+                    break;
+                case "addacc":
+                    request.setAttribute("btnname", name);
+                    request.getRequestDispatcher("Add.jsp").forward(request, response);
+                    break;
+                case "adddh":
+                    request.setAttribute("btnname", name);
+                    request.getRequestDispatcher("Add.jsp").forward(request, response);
+                default:
+                    request.setAttribute("ListSP", ListSP);
+                    request.setAttribute("btnname", name);
+            }
         }
+            
         request.getRequestDispatcher("HomeAdmin.jsp").forward(request, response);
     }
 
@@ -87,5 +120,5 @@ public class AdminShowControl extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+   
 }
