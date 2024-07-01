@@ -123,7 +123,7 @@
                                         </a>
                                         <a href="cart?action=addCart&spid=${obj_product.sanPhamid}&soLuong=1" class="text-reset ">
                                             <p>Add Cart</p>
-                                            <p><a href="./view-cart.jsp">View Cart</p>
+                                            <p><a href="view-cart.jsp">View Cart</p>
                                         </a>
                                         <h6 class="mb-3 price">${obj_product.giatien}</h6>
                                     </div>

@@ -57,7 +57,60 @@ public class CartControl extends HttpServlet {
 //            default:
 //                throw new AssertionError();
 //        }
-        
+        String spid = request.getParameter("spid");
+        String action = request.getParameter("action");
+
+        if (spid == null || action == null) {
+            response.sendRedirect("view-cart.jsp?error=Invalid+request");
+            return;
+        }
+
+        int soLuong = 0;
+        try {
+            if (!action.equals("removeCart")) {
+                soLuong = Integer.parseInt(request.getParameter("soLuong"));
+            }
+        } catch (NumberFormatException e) {
+            response.sendRedirect("view-cart.jsp?error=Invalid+quantity");
+            return;
+        }
+
+        DaoSanPham daoSP = new DaoSanPham();
+
+        switch (action) {
+            case "addCart":
+                boolean found = false;
+                for (GioHang gh : dsgh) {
+                    if (gh.getPro().getSanPhamid() == Integer.parseInt(spid)) {
+                        gh.setSoluong(gh.getSoluong() + soLuong);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    SanPham sp = daoSP.getAllSanPhamByID(spid);
+                    GioHang gh = new GioHang(sp, soLuong);
+                    dsgh.add(gh);
+                }
+                response.sendRedirect("home");
+                break;
+            case "updateCart":
+                for (GioHang gh : dsgh) {
+                    if (gh.getPro().getSanPhamid() == Integer.parseInt(spid)) {
+                        gh.setSoluong(soLuong);
+                        break;
+                    }
+                }
+                response.sendRedirect("view-cart.jsp");
+                break;
+            case "removeCart":
+                dsgh.removeIf(gh -> gh.getPro().getSanPhamid() == Integer.parseInt(spid));
+                response.sendRedirect("view-cart.jsp");
+                break;
+            default:
+                response.sendRedirect("view-cart.jsp?error=Unknown+action");
+                break;
+        }
         
     }
 

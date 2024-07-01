@@ -27,13 +27,16 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-
+                    <div class="carousel-caption" class="text-center" style="color: rgb(234, 226, 226);">
+                        <h1 >Decao Shop</h1>
+                        <h3>Uy tín -  Giá rẻ - Chính hãng</h3>
+                    </div>
                     <div class="item active">
                         <img src="images/Carousel1.jpg" alt="Los Angeles" style="width:100%;height: 500px">
-                        <div class="carousel-caption">
-                            <h3>Decao Shop </h3>
-                            <p>Chất lượng uy tín hàng đầu Việt Nam!</p>
-                        </div>
+                        <!--                        <div class="carousel-caption">
+                                                    <h3>Decao Shop </h3>
+                                                    <p>Chất lượng uy tín hàng đầu Việt Nam!</p>
+                                                </div>-->
                     </div>
 
                     <div class="item">
