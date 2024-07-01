@@ -39,24 +39,24 @@ public class CartControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String spid = request.getParameter("spid");
-        int soLuong = Integer.parseInt(request.getParameter("soLuong"));
-        String action = request.getParameter("action");
-        DaoSanPham daoSP = new DaoSanPham();
-        
-        GioHang gh = new GioHang();
-        SanPham sp = null;
-        switch (action) {
-            case "addCart":
-                sp = daoSP.getAllSanPhamByID(spid);
-                gh.setPro(sp);
-                gh.setSoluong(soLuong); 
-                dsgh.add(gh);
-                response.sendRedirect("home");
-                break;
-            default:
-                throw new AssertionError();
-        }
+//        String spid = request.getParameter("spid");
+//        int soLuong = Integer.parseInt(request.getParameter("soLuong"));
+//        String action = request.getParameter("action");
+//        DaoSanPham daoSP = new DaoSanPham();
+//        
+//        GioHang gh = new GioHang();
+//        SanPham sp = null;
+//        switch (action) {
+//            case "addCart":
+//                sp = daoSP.getAllSanPhamByID(spid);
+//                gh.setPro(sp);
+//                gh.setSoluong(soLuong); 
+//                dsgh.add(gh);
+//                response.sendRedirect("home");
+//                break;
+//            default:
+//                throw new AssertionError();
+//        }
         
         
     }
