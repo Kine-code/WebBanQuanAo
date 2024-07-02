@@ -6,6 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<c:set var="adminName" value="${sessionScope.acc.getHoten()}" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,8 +39,12 @@
             h2 {
                 margin-bottom: 20px;
             }
-
-
+            .col-sm-10{
+                margin-top: 80px;
+            }
+            .table{
+                margin-top: 30px;
+            }
 
         </style>
     </head>
@@ -47,7 +52,10 @@
         // Trigger resize handler
     </script>
     <body>
-
+        <div class="col-sm-10 text-center">
+            <img src="images/hi2.gif" alt="Greeting GIF" style="width: 200px; height: 200px;  "/> <br>
+            <h2 style="display: inline-block; vertical-align: middle;">Xin chào <b> ${adminName}</b>, chúc bạn một ngày tuyệt vời!</h2>
+        </div>
         <c:if test="${btnname == 'btnsanpham'}">
             <div class="col-sm-10">
                 <h2 class="text-center">Sản Phẩm của chúng tôi</h2>

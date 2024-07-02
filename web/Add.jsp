@@ -70,7 +70,7 @@
                         <label for="danhmuc_id">Danh mục</label>
                         <input type="number" class="form-control" id="danhmuc_id" name="danhmuc_id" required>
                     </div>
-                    <button onclick="uploadFile()" type="submit" name="btnThemsp" class="btn btn-primary btn-block">Thêm sản phẩm</button>
+                    <button  type="submit" name="btnThemsp" class="btn btn-primary btn-block">Thêm sản phẩm</button>
                 </form>
             </div>
         </c:if>
@@ -168,24 +168,6 @@
             </div>
         </c:if>
         
-        <script>
-        function uploadFile() 
-            var formData = new FormData();
-            var fileField = document.getElementById('anh');
-
-            formData.append('anh', fileField.files[0]);
-
-            fetch('/upload', {
-                method: 'POST',
-                body: formData
-            }).then(response => response.json())
-            .then(result => {
-                document.getElementById('status').textContent = result.message;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
+       
     </body>
 </html>

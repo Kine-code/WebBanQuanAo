@@ -83,7 +83,7 @@
                                                 ${acc.hoten}
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                                <a href="#" style="padding-left: 30px; font-size: 14px" class=" icon-header-item cl2 hov-cl1">Sửa thông tin</a>
+                                                <a href="editUserInfo.jsp" style="padding-left: 30px; font-size: 14px" class=" icon-header-item cl2 hov-cl1">Sửa thông tin</a>
                                                <c:if test="${sessionScope.acc.chucVu == 1}">
                                                     <a class="dropdown-item" style="padding-left: 30px; font-size: 14px" href="ashowcontrol">Admin</a>
                                                 </c:if>

@@ -149,4 +149,22 @@ public class DaoAccount {
 
         }
     }
+//    public void updateAccount1(String account_id, String userName, String passWord, String hoten, String email, String sodienthoai, String diachi) {
+//        String query = "update Account set userName = ?, passWord = ?, hoten=?, email = ?, sodienthoai = ?, diachi=? where account_id= ?";
+//        try {
+//            conn = new DBContext().getConnection();
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, userName);
+//            ps.setString(2, passWord);
+//            ps.setString(3, hoten);
+//            ps.setString(4, email);
+//            ps.setString(5, sodienthoai);
+//            ps.setString(6, diachi);
+//            ps.setString(8, account_id);
+//
+//            ps.executeUpdate();
+//        } catch (Exception e) {
+//
+//        }
+//    }
 }
