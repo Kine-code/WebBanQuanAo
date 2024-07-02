@@ -40,10 +40,10 @@ public class DaoAccount {
         return null;
     }
     
-    public static void main(String[] args) {
-        DaoAccount dao = new DaoAccount();
-        System.out.println(dao.checkAccount("admin", "123"));
-    }
+//    public static void main(String[] args) {
+//        DaoAccount dao = new DaoAccount();
+//        System.out.println(dao.checkAccount("admin", "123"));
+//    }
     
 
     public List<Account> getAllAccount() {

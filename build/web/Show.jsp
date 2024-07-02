@@ -48,14 +48,11 @@
 
         </style>
     </head>
-    <script>
-        // Trigger resize handler
-    </script>
     <body>
-        <div class="col-sm-10 text-center">
+<!--        <div class="col-sm-10 text-center">
             <img src="images/hi2.gif" alt="Greeting GIF" style="width: 200px; height: 200px;  "/> <br>
             <h2 style="display: inline-block; vertical-align: middle;">Xin chào <b> ${adminName}</b>, chúc bạn một ngày tuyệt vời!</h2>
-        </div>
+        </div>-->
         <c:if test="${btnname == 'btnsanpham'}">
             <div class="col-sm-10">
                 <h2 class="text-center">Sản Phẩm của chúng tôi</h2>

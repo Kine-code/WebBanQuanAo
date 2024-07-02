@@ -45,6 +45,7 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("acc", acc);
             request.getRequestDispatcher("home").forward(request, response);
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
