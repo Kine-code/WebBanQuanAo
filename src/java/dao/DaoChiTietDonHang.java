@@ -40,4 +40,19 @@ public class DaoChiTietDonHang {
         }
         return null;
     }
+    
+     public void deleteChiTietDonHang(String chiTietDonHang_id){
+        String query = "delete from ChiTietDonHang where chiTietDonHang_id = ?";
+        try {
+            //mở connect
+            conn = new DBContext().getConnection();
+            //trỏ query vào db
+            ps = conn.prepareStatement(query);
+            //truyền id vào query
+            ps.setString(1, chiTietDonHang_id);
+            ps.executeUpdate();
+        }catch (Exception e){
+            
+        }
+    }
 }

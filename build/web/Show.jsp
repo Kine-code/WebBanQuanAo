@@ -52,10 +52,13 @@
         // Trigger resize handler
     </script>
     <body>
+        <c:if test="${btnname == null}">
+
         <div class="col-sm-10 text-center">
             <img src="images/hi2.gif" alt="Greeting GIF" style="width: 200px; height: 200px;  "/> <br>
             <h2 style="display: inline-block; vertical-align: middle;">Xin chào <b> ${adminName}</b>, chúc bạn một ngày tuyệt vời!</h2>
         </div>
+        </c:if>
         <c:if test="${btnname == 'btnsanpham'}">
             <div class="col-sm-10">
                 <h2 class="text-center">Sản Phẩm của chúng tôi</h2>
@@ -227,7 +230,7 @@
         
         <c:if test="${btnname == 'chitietdonhang'}">
             <div class="col-sm-10">
-                <h2 class="text-center">Danh sách đơn hàng</h2>
+                <h2 class="text-center">Chi tiết đơn hàng</h2>
                 <div style="max-height: 500px; overflow-y:auto;">
                     <table class="table table-bordered table-hover">
                         <thead>
@@ -250,7 +253,6 @@
                                     <td>${x.giaBan}</td>
 
                                     <td>
-                                        <a href="aupdatecontrol?btnname=btnsuact&sid=${x.chiTietDonHang_id}"" class="btn btn-primary">Sửa</a>
                                         <a href="adeletecontrol?btnname=deletect&sid=${x.chiTietDonHang_id}" class="btn btn-danger">Xóa</a>
                                     </td>
                                 </tr>

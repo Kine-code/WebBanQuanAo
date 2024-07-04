@@ -35,22 +35,28 @@ public class AdminDeleteControl extends HttpServlet {
         DaoAccount daoacc = new DaoAccount();
         //DonHang
         DaoDonHang daodh = new DaoDonHang();
+        //Chi tiet
+        DaoChiTietDonHang daoct = new DaoChiTietDonHang();
         switch (btnname) {
             case "deletesp":
                 dao.deleteSanPham(delete);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=btnsanpham");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=btnsanpham");
                 break;
             case "deletedm":
                 daodm.deleteDanhMuc(delete);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=danhmucsanpham");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=danhmucsanpham");
                 break;
             case "deleteacc":
                 daoacc.deleteAccount(delete);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=account");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=account");
                 break;
             case "deletedh":
                 daodh.deleteDonHang(delete);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=donhang");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=donhang");
+                break;
+            case "deletect":
+                daoct.deleteChiTietDonHang(delete);
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=chitietdonhang");
                 break;
             default:
                 throw new AssertionError();

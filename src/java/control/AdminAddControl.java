@@ -35,14 +35,14 @@ public class AdminAddControl extends HttpServlet {
                 String sdanhmuc_id = request.getParameter("danhmuc_id");
                 DaoSanPham dao = new DaoSanPham();
                 dao.insertSanPham(stensanpham, smotasanpham, ssoluong, ssize, sgiatien, sanh, sdanhmuc_id);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=btnsanpham");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=btnsanpham");
                 break;
             case "danhmucsanpham":
                 String stenDanhMuc = request.getParameter("tenDanhMuc");
                 String smota = request.getParameter("mota");
                 dao.DaoDanhMucSanPham daodm = new DaoDanhMucSanPham();
                 daodm.insertDanhMuc(stenDanhMuc, smota);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=danhmucsanpham");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=danhmucsanpham");
                 break;
             case "btnAccount":
                 String auserName = request.getParameter("userName");
@@ -54,7 +54,7 @@ public class AdminAddControl extends HttpServlet {
                 String achucVu = request.getParameter("chucVu");
                 DaoAccount daoacc = new DaoAccount();
                 daoacc.insertAccount(auserName, apassWord, ahoten, aemail, asodienthoai, adiachi, achucVu);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=account");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=account");
                 break;
             case "btnDonHang":
                 String dkhachHang_id = request.getParameter("khachHang_id");
@@ -64,7 +64,7 @@ public class AdminAddControl extends HttpServlet {
                 DaoDonHang daodh = new DaoDonHang();
                 daodh.insertDonHang(dkhachHang_id, dngayDatHang, dtongTien, dtrangThai);
                 if(dtrangThai != null)
-                    response.sendRedirect("/banquanao/ashowcontrol?btnname=donhang");
+                    response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=donhang");
                 break;
             default:
                 throw new AssertionError();

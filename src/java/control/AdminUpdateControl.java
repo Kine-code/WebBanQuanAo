@@ -55,7 +55,7 @@ public class AdminUpdateControl extends HttpServlet {
                 String panh = request.getParameter("anh");
                 String pdanhmuc_id = request.getParameter("danhmuc_id");
                 dao.updateSanPham(psanPhamid, ptensanpham, pmotasanpham, psoluong, psize, pgiatien, panh, pdanhmuc_id);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=btnsanpham");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=btnsanpham");
             break;   
             case "btnsuadm":
                DanhMucSanPham dmuc = daodm.getDanhMucByIdDanhMuc(update);
@@ -68,7 +68,7 @@ public class AdminUpdateControl extends HttpServlet {
                 String dtenDanhMuc = request.getParameter("tenDanhMuc");
                 String dmoTa = request.getParameter("moTa");
                 daodm.updateDanhMuc(ddanhMuc_Id, dtenDanhMuc, dmoTa);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=danhmucsanpham");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=danhmucsanpham");
             break;
             case "btnsuaacc":
                 Account acc = daoacc.getAccountByIdAccount(update);
@@ -86,7 +86,7 @@ public class AdminUpdateControl extends HttpServlet {
                 String adiachi = request.getParameter("diachi");
                 String achucVu = request.getParameter("chucVu");
                 daoacc.updateAccount(aaccount_id, auserName, apassWord, ahoten, aemail, asodienthoai, adiachi, achucVu);
-                response.sendRedirect("/banquanao/ashowcontrol?btnname=account");
+                response.sendRedirect("/WebBanQuanAo/ashowcontrol?btnname=account");
             break;
             default:
                 throw new AssertionError();

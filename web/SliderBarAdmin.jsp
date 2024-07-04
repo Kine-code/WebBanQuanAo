@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
         <style>
             .wrapper {
                 display: flex;
@@ -105,7 +106,7 @@
                     <nav class="mt-2">
                         <ul class="sidebar-menu" data-widget="treeview">
                             <li class="nav-item">
-                                <a href="home" class="nav-link">
+                                <a href="ashowcontrol" class="nav-link">
                                     <i class="nav-icon fas fa-home"></i>
                                     <span>Trang chủ</span>
                                 </a>
@@ -141,9 +142,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="logout" class="nav-link">
-                                    <i class="nav-icon fas fa-sign-out-alt"></i>
-                                    <span>Đăng xuất</span>
+                                <a href="home" class="nav-link" style="padding-left: 9px">
+                                    <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; margin-right: 7px" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15" />
+</svg>
+                                    <span>Thoát</span>
                                 </a>
                             </li>
                         </ul>

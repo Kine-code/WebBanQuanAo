@@ -124,3 +124,35 @@ INSERT INTO ChiTietDonHang (donhang_id, sanpham_id, soluong, giaban) VALUES
 INSERT INTO GioHang (khachhang_id, sanpham_id, soluong) VALUES 
 (1, 1, 1),
 (2, 2, 2);
+
+USE QuanLyDeCao;
+GO
+
+-- Tạo trigger sau khi thêm chi tiết đơn hàng
+
+go
+CREATE TRIGGER trg_UpdateSanPhamFromChiTietDonHang
+ON ChiTietDonHang
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    -- Cập nhật số lượng sản phẩm khi thêm mới hoặc cập nhật chi tiết đơn hàng
+    IF EXISTS (SELECT * FROM inserted)
+    BEGIN
+        UPDATE sp
+        SET sp.soluong = sp.soluong - i.soluong
+        FROM SanPham sp
+        JOIN inserted i ON sp.sanpham_id = i.sanpham_id;
+    END
+
+    -- Cập nhật lại số lượng sản phẩm khi xóa chi tiết đơn hàng
+    IF EXISTS (SELECT * FROM deleted)
+    BEGIN
+        UPDATE sp
+        SET sp.soluong = sp.soluong + d.soluong
+        FROM SanPham sp
+        JOIN deleted d ON sp.sanpham_id = d.sanpham_id;
+    END
+END;
