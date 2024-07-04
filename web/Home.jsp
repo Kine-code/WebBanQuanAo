@@ -47,15 +47,19 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link href="./css/style.css" rel="stylesheet" type="text/css">
     </head>
     <body class="animsition">
 
         <jsp:include page="Layout/Header.jsp"></jsp:include>
-
+            <jsp:include page="Layout/Carousel.jsp"></jsp:include>
             <div class="bg0 m-t-23 ">
                 <div class="container">
-                    <div class="flex-w flex-sb-m p-b-52">
+                    <div class="flex-w flex-sb-m p-b-52" style="padding-bottom: 20px">
                         <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                         <button  class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 ${tendm==null?"how-active1":""}" data-filter="*">
                             <a  href="home" > All Product</a>
@@ -117,9 +121,9 @@
                                         <a href="productdetail?pid=${obj_product.sanPhamid}" class="text-reset" style="text-decoration: none">
                                             <h5 class="card-title mb-2" id="productname">${obj_product.tensanpham}</h5>
                                         </a>
-                                        <a href="ProductCart?action=AddCart&id=${obj_product.tensanpham}" class="text-reset ">
+                                        <a href="cart?action=addCart&spid=${obj_product.sanPhamid}&soLuong=1" class="text-reset ">
                                             <p>Add Cart</p>
-                                            <p><a href="./view-cart.jsp">View Cart</p>
+                                            <p><a href="view-cart.jsp">View Cart</p>
                                         </a>
                                         <h6 class="mb-3 price">${obj_product.giatien}</h6>
                                     </div>

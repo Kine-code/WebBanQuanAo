@@ -16,10 +16,9 @@ public class Account {
     private String email;
     private String sodienthoai;
     private String diachi;
-    private boolean isSell;
-    private boolean isAdmin;
+    private int chucVu;
 
-    public Account(int account_id, String userName, String passWord, String hoten, String email, String sodienthoai, String diachi, boolean isSell, boolean isAdmin) {
+    public Account(int account_id, String userName, String passWord, String hoten, String email, String sodienthoai, String diachi, int chucVu) {
         this.account_id = account_id;
         this.userName = userName;
         this.passWord = passWord;
@@ -27,8 +26,7 @@ public class Account {
         this.email = email;
         this.sodienthoai = sodienthoai;
         this.diachi = diachi;
-        this.isSell = isSell;
-        this.isAdmin = isAdmin;
+        this.chucVu = chucVu;
     }
 
     public int getAccount_id() {
@@ -87,26 +85,21 @@ public class Account {
         this.diachi = diachi;
     }
 
-    public boolean isIsSell() {
-        return isSell;
+    public int getChucVu() {
+        return chucVu;
     }
 
-    public void setIsSell(boolean isSell) {
-        this.isSell = isSell;
-    }
-
-    public boolean isIsAdmin() {
-        return isAdmin;
-    }
-
-    public void setIsAdmin(boolean isAdmin) {
-        this.isAdmin = isAdmin;
+    public void setChucVu(int chucVu) {
+        this.chucVu = chucVu;
     }
 
     @Override
     public String toString() {
-        return "Account{" + "account_id=" + account_id + ", userName=" + userName + ", passWord=" + passWord + ", hoten=" + hoten + ", email=" + email + ", sodienthoai=" + sodienthoai + ", diachi=" + diachi + ", isSell=" + isSell + ", isAdmin=" + isAdmin + '}';
+        return "Account{" + "account_id=" + account_id + ", userName=" + userName + ", passWord=" + passWord + ", hoten=" + hoten + ", email=" + email + ", sodienthoai=" + sodienthoai + ", diachi=" + diachi + ", chucVu=" + chucVu + '}';
     }
+    
+    
 
-   
+    
+    
 }

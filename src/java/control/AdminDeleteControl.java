@@ -4,8 +4,10 @@
  */
 package control;
 
+import dao.DaoDanhMucSanPham;
+import dao.*;
+import dao.DaoAccount;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,69 +21,57 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "AdminDeleteControl", urlPatterns = {"/adeletecontrol"})
 public class AdminDeleteControl extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AdminDeleteControl</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AdminDeleteControl at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        request.setCharacterEncoding("UTF-8");
+        String delete = request.getParameter("sid");
+        String btnname = request.getParameter("btnname");
+        //SanPham
+        dao.DaoSanPham dao = new DaoSanPham();
+        //DanhMuc
+        DaoDanhMucSanPham daodm = new DaoDanhMucSanPham();
+        //Account
+        DaoAccount daoacc = new DaoAccount();
+        //DonHang
+        DaoDonHang daodh = new DaoDonHang();
+        switch (btnname) {
+            case "deletesp":
+                dao.deleteSanPham(delete);
+                response.sendRedirect("/banquanao/ashowcontrol?btnname=btnsanpham");
+                break;
+            case "deletedm":
+                daodm.deleteDanhMuc(delete);
+                response.sendRedirect("/banquanao/ashowcontrol?btnname=danhmucsanpham");
+                break;
+            case "deleteacc":
+                daoacc.deleteAccount(delete);
+                response.sendRedirect("/banquanao/ashowcontrol?btnname=account");
+                break;
+            case "deletedh":
+                daodh.deleteDonHang(delete);
+                response.sendRedirect("/banquanao/ashowcontrol?btnname=donhang");
+                break;
+            default:
+                throw new AssertionError();
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

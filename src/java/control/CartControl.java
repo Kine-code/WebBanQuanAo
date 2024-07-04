@@ -39,25 +39,74 @@ public class CartControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+//        String spid = request.getParameter("spid");
+//        int soLuong = Integer.parseInt(request.getParameter("soLuong"));
+//        String action = request.getParameter("action");
+//        DaoSanPham daoSP = new DaoSanPham();
+//        
+//        GioHang gh = new GioHang();
+//        SanPham sp = null;
+//        switch (action) {
+//            case "addCart":
+//                sp = daoSP.getAllSanPhamByID(spid);
+//                gh.setPro(sp);
+//                gh.setSoluong(soLuong); 
+//                dsgh.add(gh);
+//                response.sendRedirect("home");
+//                break;
+//            default:
+//                throw new AssertionError();
+//        }
         String spid = request.getParameter("spid");
-        int soLuong = Integer.parseInt(request.getParameter("soLuong"));
         String action = request.getParameter("action");
-        DaoSanPham daoSP = new DaoSanPham();
+
+//        if (spid == null || action == null) {
+//            response.sendRedirect("view-cart.jsp?error=Invalid+request");
+//            return;
+//        }
+
+        int soLuong = 0;
         
-        GioHang gh = new GioHang();
-        SanPham sp = null;
+        String s = request.getParameter("soLuong");
+        if(s != null)
+            soLuong = Integer.parseInt(s);
+
+        DaoSanPham daoSP = new DaoSanPham();
+
         switch (action) {
             case "addCart":
-                sp = daoSP.getAllSanPhamByID(spid);
-                gh.setPro(sp);
-                gh.setSoluong(soLuong); 
-                dsgh.add(gh);
+                boolean found = false;
+                for (GioHang gh : dsgh) {
+                    if (gh.getPro().getSanPhamid() == Integer.parseInt(spid)) {
+                        gh.setSoluong(gh.getSoluong() + soLuong);
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    SanPham sp = daoSP.getAllSanPhamByID(spid);
+                    GioHang gh = new GioHang(sp, soLuong);
+                    dsgh.add(gh);
+                }
+                response.sendRedirect("home");
+                break;
+            case "updateCart":
+                for (GioHang gh : dsgh) {
+                    if (gh.getPro().getSanPhamid() == Integer.parseInt(spid)) {
+                        gh.setSoluong(soLuong);
+                        break;
+                    }
+                }
+                //response.sendRedirect("view-cart.jsp");
+                break;
+            case "removeCart":
+                dsgh.clear();
                 response.sendRedirect("home");
                 break;
             default:
-                throw new AssertionError();
+                response.sendRedirect("view-cart.jsp?error=Unknown+action");
+                break;
         }
-        
         
     }
 
