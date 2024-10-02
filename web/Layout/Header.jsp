@@ -57,7 +57,7 @@
                                     </li>
 
                                     <li>
-                                        <a data-id="link4" class="link" href="#">Contact</a>
+                                        <a data-id="link4" class="link" href="Contact.jsp">Contact</a>
                                     </li>
                                 </ul>
                             </div>	

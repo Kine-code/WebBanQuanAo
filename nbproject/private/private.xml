@@ -7,7 +7,9 @@
             <file>file:/D:/java/source/banquanao/web/Show.jsp</file>
             <file>file:/D:/java/source/banquanao/src/java/control/CategoryControl.java</file>
             <file>file:/D:/java/source/banquanao/web/SliderBarAdmin.jsp</file>
+            <file>file:/D:/java/source/banquanao/web/Layout/Carousel.jsp</file>
             <file>file:/D:/java/source/banquanao/web/Add.jsp</file>
+            <file>file:/D:/java/source/banquanao/web/Login_Register.jsp</file>
             <file>file:/D:/java/source/banquanao/src/java/dao/DaoAccount.java</file>
             <file>file:/D:/java/source/banquanao/web/css/stylescheckout.css</file>
             <file>file:/D:/java/source/banquanao/web/Layout/Header.jsp</file>
@@ -17,6 +19,9 @@
             <file>file:/D:/java/source/banquanao/src/java/control/AdminShowControl.java</file>
             <file>file:/D:/java/source/banquanao/src/java/entity/Account.java</file>
             <file>file:/D:/java/source/banquanao/src/java/entity/ChiTietDonHang.java</file>
+            <file>file:/D:/java/source/banquanao/web/Layout/Footer.jsp</file>
+            <file>file:/D:/java/source/banquanao/web/editUserInfo.jsp</file>
+            <file>file:/D:/java/source/banquanao/src/java/control/SearchProductControl.java</file>
             <file>file:/D:/java/source/banquanao/web/Home.jsp</file>
             <file>file:/D:/java/source/banquanao/src/java/control/AdminDeleteControl.java</file>
             <file>file:/D:/java/source/banquanao/web/checkout.jsp</file>
@@ -24,6 +29,7 @@
             <file>file:/D:/java/source/banquanao/src/java/control/CartControl.java</file>
             <file>file:/D:/java/source/banquanao/src/java/dao/DaoSanPham.java</file>
             <file>file:/D:/java/source/banquanao/web/css/main.css</file>
+            <file>file:/D:/java/source/banquanao/src/java/control/UpdateUserInfo.java</file>
             <file>file:/D:/java/source/banquanao/web/css/styles.css</file>
             <file>file:/D:/java/source/banquanao/web/css/style.css</file>
             <file>file:/D:/java/source/banquanao/src/java/control/LoginControl.java</file>
@@ -31,9 +37,12 @@
             <file>file:/D:/java/source/banquanao/src/java/dao/DaoDanhMucSanPham.java</file>
             <file>file:/D:/java/source/banquanao/web/HomeAdmin.jsp</file>
             <file>file:/D:/java/source/banquanao/src/java/control/AdminUpdateControl.java</file>
+            <file>file:/D:/java/source/banquanao/src/java/control/ProductDetailControl.java</file>
+            <file>file:/D:/java/source/banquanao/web/Contact.jsp</file>
             <file>file:/D:/java/source/banquanao/web/css/stylescart.css</file>
             <file>file:/D:/java/source/banquanao/src/java/dao/DaoChiTietDonHang.java</file>
             <file>file:/D:/java/source/banquanao/web/update.jsp</file>
+            <file>file:/D:/java/source/banquanao/src/java/control/LogoutControl.java</file>
             <file>file:/D:/java/source/banquanao/src/java/entity/DonHang.java</file>
         </group>
     </open-files>

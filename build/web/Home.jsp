@@ -118,14 +118,16 @@
                                         </a>
                                     </div>
                                     <div class="card-body">
+                                        
                                         <a href="productdetail?pid=${obj_product.sanPhamid}" class="text-reset" style="text-decoration: none">
                                             <h5 class="card-title mb-2" id="productname">${obj_product.tensanpham}</h5>
                                         </a>
+                                        <h6 class="mb-3 price">${obj_product.giatien} VND</h6>
                                         <a href="cart?action=addCart&spid=${obj_product.sanPhamid}&soLuong=1" class="text-reset ">
-                                            <p>Add Cart</p>
-                                            <p><a href="view-cart.jsp">View Cart</p>
+                                            <p>Thêm sản phẩm</p>
+                                            <p><a href="view-cart.jsp">Xem giỏ hàng</p>
                                         </a>
-                                        <h6 class="mb-3 price">${obj_product.giatien}</h6>
+                                        
                                     </div>
                                 </div>
                             </div>

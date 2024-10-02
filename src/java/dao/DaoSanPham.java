@@ -157,4 +157,20 @@ public class DaoSanPham {
             
         }
     }
+     public List<SanPham> searchSanPham(String keyword) {
+        List<SanPham> list = new ArrayList<>();
+        String query = "SELECT * FROM SanPham WHERE tensanpham LIKE ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + keyword + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new SanPham(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4),
+                        rs.getString(5), rs.getFloat(6), rs.getString(7), rs.getInt(8)));
+            }return list;
+        } catch (Exception e) {
+        }
+        return null;
+    }
 }

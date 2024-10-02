@@ -247,7 +247,7 @@
                                     <td>${x.giaBan}</td>
 
                                     <td>
-                                        <a href="aupdatecontrol?btnname=btnsuact&sid=${x.chiTietDonHang_id}"" class="btn btn-primary">Sửa</a>
+                                        <!--<a href="aupdatecontrol?btnname=btnsuact&sid=${x.chiTietDonHang_id}"" class="btn btn-primary">Sửa</a>-->
                                         <a href="adeletecontrol?btnname=deletect&sid=${x.chiTietDonHang_id}" class="btn btn-danger">Xóa</a>
                                     </td>
                                 </tr>

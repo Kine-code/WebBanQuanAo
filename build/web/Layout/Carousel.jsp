@@ -28,7 +28,7 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="carousel-caption" class="text-center" style="color: rgb(234, 226, 226);">
-                        <h1 >Decao Shop</h1>
+                        <h1 >Decao Store</h1>
                         <h3>Uy tín -  Giá rẻ - Chính hãng</h3>
                     </div>
                     <div class="item active">
