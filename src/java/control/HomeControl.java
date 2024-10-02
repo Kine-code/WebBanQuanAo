@@ -14,7 +14,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -39,10 +38,10 @@ public class HomeControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         DaoSanPham daoSP = new DaoSanPham();
         DaoDanhMucSanPham daoDMSP = new DaoDanhMucSanPham();
-       
+
         List<DanhMucSanPham> ListDMSP = daoDMSP.getAllDanhMucSanPham();
         request.setAttribute("ListDMSP", ListDMSP);
-        
+
         List<SanPham> ListSP = daoSP.getAllSanPham();
         request.setAttribute("ListSP", ListSP);
         request.getRequestDispatcher("Home.jsp").forward(request, response);
